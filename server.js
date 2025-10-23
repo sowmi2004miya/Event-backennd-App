@@ -27,6 +27,18 @@ app.get("/api/occasion", async (req, res) => {
   }
 });
 
+// 🟢 Get Event by ID
+app.get("/api/occasion/:id", async (req, res) => {
+  try {
+    const event = await Occasion.findById(req.params.id);
+    if (!event) return res.status(404).json({ message: "Event not found" });
+    res.status(200).json(event);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching event", error });
+  }
+});
+
+
 
 // ➕ Add Event
 app.post("/api/occasion/add", async (req, res) => {
