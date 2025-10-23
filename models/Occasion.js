@@ -7,5 +7,5 @@ const eventSchema = new mongoose.Schema({
   location: { type: String, required: true },
 });
 
-module.exports= mongoose.model("Event", eventSchema);
+module.exports= mongoose.model("Occasion", eventSchema);
 
