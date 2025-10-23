@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI)
    console.error('MongoDB Connection Error!!',err.message);
  });
 
- app.use('/api/events',eventRoutes);
+ app.use('/api/occasion',eventRoutes);
 
  app.listen(PORT,() =>{
     console.log(`Server is running on port${PORT}`);
